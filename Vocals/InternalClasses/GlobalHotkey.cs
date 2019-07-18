@@ -19,7 +19,7 @@ namespace Vocals.InternalClasses {
         [DllImport("user32.dll")]
         private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
-        public GlobalHotkey(int mod, Keys k, Form1 hw) {
+        public GlobalHotkey(int mod, Keys k, CommandHub hw) {
             this.modifier = mod;
             this.key = (int)k;
             this.hWnd = hw.Handle;

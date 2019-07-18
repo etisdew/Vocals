@@ -13,13 +13,9 @@ namespace Vocals {
         public string commandString;
         public List<Actions> actionList;
 
-
         public bool answering { get; set; }
-
         public string answeringString { get; set; }
-
         public bool answeringSound { get; set; }
-
         public string answeringSoundPath { get; set; }
 
         public Command() {
@@ -83,7 +79,7 @@ namespace Vocals {
                         synth.SpeakAsync(answeringString);
                     }
                 }
-                catch(Exception e){
+                catch(Exception){
                     
                 }
             }

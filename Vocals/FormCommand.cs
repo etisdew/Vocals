@@ -26,7 +26,7 @@ namespace Vocals {
             answering = false;
             answeringString = "";
 
-            listBox1.DataSource = actionList;
+            listBox_MacroList.DataSource = actionList;
         }
 
         public FormCommand(Command c) {
@@ -35,10 +35,10 @@ namespace Vocals {
             commandString = c.commandString;
 
             answering = c.answering;
-            checkBox1.Checked = answering;
+            checkBox_UseVoiceSythesis.Checked = answering;
 
             answeringString = c.answeringString;
-            richTextBox1.Text = answeringString;
+            richTextBox_VoiceSythesisString.Text = answeringString;
 
             answeringSound = c.answeringSound;
             checkBox2.Checked = answeringSound;
@@ -46,20 +46,20 @@ namespace Vocals {
             answeringSoundPath = c.answeringSoundPath;
             textBox2.Text = answeringSoundPath;
 
-            listBox1.DataSource = actionList;
-            textBox1.Text = commandString;
+            listBox_MacroList.DataSource = actionList;
+            textBox_CommandWord.Text = commandString;
         }
 
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
-            this.commandString = textBox1.Text;
+            this.commandString = textBox_CommandWord.Text;
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            if (listBox1.SelectedItem != null) {
-                actionList.RemoveAt(listBox1.SelectedIndex);
-                listBox1.DataSource = null;
-                listBox1.DataSource = actionList;
+            if (listBox_MacroList.SelectedItem != null) {
+                actionList.RemoveAt(listBox_MacroList.SelectedIndex);
+                listBox_MacroList.DataSource = null;
+                listBox_MacroList.DataSource = actionList;
             }
         }
 
@@ -76,8 +76,8 @@ namespace Vocals {
 
                     actionList.Add(myNewAction);
 
-                    listBox1.DataSource = null;
-                    listBox1.DataSource = actionList;
+                    listBox_MacroList.DataSource = null;
+                    listBox_MacroList.DataSource = actionList;
                 }
             }
 
@@ -103,7 +103,7 @@ namespace Vocals {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            Actions a = (Actions)listBox1.SelectedItem;
+            Actions a = (Actions)listBox_MacroList.SelectedItem;
             if (a != null) {
                 FormAction formEditAction = new FormAction(a);
                 formEditAction.ShowDialog();
@@ -113,8 +113,8 @@ namespace Vocals {
                 a.keyModifier = formEditAction.modifier;
                 a.timer = (float)formEditAction.selectedTimer;
 
-                listBox1.DataSource = null;
-                listBox1.DataSource = actionList;
+                listBox_MacroList.DataSource = null;
+                listBox_MacroList.DataSource = actionList;
 
 
             }
@@ -125,41 +125,41 @@ namespace Vocals {
         }
 
         private void button6_Click(object sender, EventArgs e) {
-            int selectedIndex = listBox1.SelectedIndex;
+            int selectedIndex = listBox_MacroList.SelectedIndex;
             if (selectedIndex > 0) {
                 Actions actionToMoveDown = actionList.ElementAt(selectedIndex - 1);
                 actionList.RemoveAt(selectedIndex - 1);
                 actionList.Insert(selectedIndex, actionToMoveDown);
 
-                listBox1.DataSource = null;
-                listBox1.DataSource = actionList;
-                listBox1.SelectedIndex = selectedIndex - 1;
+                listBox_MacroList.DataSource = null;
+                listBox_MacroList.DataSource = actionList;
+                listBox_MacroList.SelectedIndex = selectedIndex - 1;
             }
         }
 
         private void button7_Click(object sender, EventArgs e) {
-            int selectedIndex = listBox1.SelectedIndex;
+            int selectedIndex = listBox_MacroList.SelectedIndex;
             if (selectedIndex < actionList.Count - 1) {
                 Actions actionToMoveUp = actionList.ElementAt(selectedIndex + 1);
                 actionList.RemoveAt(selectedIndex + 1);
                 actionList.Insert(selectedIndex, actionToMoveUp);
 
-                listBox1.DataSource = null;
-                listBox1.DataSource = actionList;
-                listBox1.SelectedIndex = selectedIndex + 1;
+                listBox_MacroList.DataSource = null;
+                listBox_MacroList.DataSource = actionList;
+                listBox_MacroList.SelectedIndex = selectedIndex + 1;
             }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e) {
-            answeringString = richTextBox1.Text;
+            answeringString = richTextBox_VoiceSythesisString.Text;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
-            if (checkBox1.Checked) {
+            if (checkBox_UseVoiceSythesis.Checked) {
                 checkBox2.Checked = false;
                 answeringSound = false;
             }
-            answering = checkBox1.Checked;
+            answering = checkBox_UseVoiceSythesis.Checked;
             
         }
 
@@ -193,7 +193,7 @@ namespace Vocals {
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e) {
             if (checkBox2.Checked) {
-                checkBox1.Checked = false;
+                checkBox_UseVoiceSythesis.Checked = false;
                 answering = false;
             }
             answeringSound = true;

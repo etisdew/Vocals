@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 //TODO : Add listen to worda
 
 namespace Vocals {
-    public partial class Form1 : Form {
+    public partial class CommandHub : Form {
 
         protected delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
@@ -49,7 +49,7 @@ namespace Vocals {
 
         bool listening = false;
 
-        public Form1() {
+        public CommandHub() {
             currentOptions = new Options();
 
             InitializeComponent();
@@ -191,7 +191,7 @@ namespace Vocals {
             try {
                 speechEngine.SetInputToDefaultAudioDevice();
             }
-            catch (InvalidOperationException ioe) {
+            catch (InvalidOperationException) {
                 richTextBox1.AppendText("No microphone were found\n");
             }
 
@@ -402,7 +402,7 @@ namespace Vocals {
                     writer.Serialize(xmlStream, profileList);
                     xmlStream.Close();
                 }
-                catch (Exception ex) {
+                catch (Exception) {
                     DialogResult res =  MessageBox.Show("Le fichier profiles_xml.vc est en cours d'utilisation par un autre processus. Voulez vous quitter sans sauvegarder ?", "Impossible de sauvegarder", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (res == DialogResult.No) {
                         e.Cancel = true;
@@ -410,7 +410,7 @@ namespace Vocals {
                 }
 
             }
-            catch (Exception exception) {
+            catch (Exception) {
                 DialogResult res = MessageBox.Show("Le fichier profiles.vd est en cours d'utilisation par un autre processus. Voulez vous quitter sans sauvegarder ?", "Impossible de sauvegarder", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (res == DialogResult.No) {
                     e.Cancel = true;

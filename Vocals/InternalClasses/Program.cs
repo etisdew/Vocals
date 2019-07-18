@@ -30,7 +30,7 @@ namespace Vocals {
                 MessageBox.Show("Please plug a valid microphone before launching the application", "No microphone found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
-                Application.Run(new Form1());
+                Application.Run(new CommandHub());
             }
         }
     }
