@@ -90,6 +90,8 @@
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.Black;
+            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
             this.numericUpDown1.Location = new System.Drawing.Point(57, 100);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.numericUpDown1.Name = "numericUpDown1";
