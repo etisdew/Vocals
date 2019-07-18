@@ -63,9 +63,10 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Silver;
+            this.comboBox1.BackColor = System.Drawing.Color.Black;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(66, 24);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -76,13 +77,13 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(5, 22);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 27);
+            this.button1.Size = new System.Drawing.Size(64, 27);
             this.button1.TabIndex = 6;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
@@ -90,9 +91,10 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.Silver;
+            this.comboBox2.BackColor = System.Drawing.Color.Black;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.ForeColor = System.Drawing.Color.White;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(6, 55);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -103,13 +105,13 @@
             // 
             // button_CreateProfile
             // 
-            this.button_CreateProfile.BackColor = System.Drawing.Color.Silver;
+            this.button_CreateProfile.BackColor = System.Drawing.Color.Teal;
             this.button_CreateProfile.FlatAppearance.BorderSize = 0;
             this.button_CreateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_CreateProfile.Location = new System.Drawing.Point(6, 22);
             this.button_CreateProfile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_CreateProfile.Name = "button_CreateProfile";
-            this.button_CreateProfile.Size = new System.Drawing.Size(91, 27);
+            this.button_CreateProfile.Size = new System.Drawing.Size(96, 27);
             this.button_CreateProfile.TabIndex = 1;
             this.button_CreateProfile.Text = "Create Profile";
             this.button_CreateProfile.UseVisualStyleBackColor = false;
@@ -117,10 +119,12 @@
             // 
             // listBox_CommandList
             // 
+            this.listBox_CommandList.BackColor = System.Drawing.Color.Black;
             this.listBox_CommandList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox_CommandList.ForeColor = System.Drawing.Color.White;
             this.listBox_CommandList.FormattingEnabled = true;
             this.listBox_CommandList.ItemHeight = 15;
-            this.listBox_CommandList.Location = new System.Drawing.Point(5, 55);
+            this.listBox_CommandList.Location = new System.Drawing.Point(5, 61);
             this.listBox_CommandList.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listBox_CommandList.Name = "listBox_CommandList";
             this.listBox_CommandList.Size = new System.Drawing.Size(191, 405);
@@ -129,13 +133,13 @@
             // 
             // button_DeleteProfile
             // 
-            this.button_DeleteProfile.BackColor = System.Drawing.Color.Silver;
+            this.button_DeleteProfile.BackColor = System.Drawing.Color.Crimson;
             this.button_DeleteProfile.FlatAppearance.BorderSize = 0;
             this.button_DeleteProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_DeleteProfile.Location = new System.Drawing.Point(99, 22);
+            this.button_DeleteProfile.Location = new System.Drawing.Point(101, 22);
             this.button_DeleteProfile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_DeleteProfile.Name = "button_DeleteProfile";
-            this.button_DeleteProfile.Size = new System.Drawing.Size(95, 27);
+            this.button_DeleteProfile.Size = new System.Drawing.Size(93, 27);
             this.button_DeleteProfile.TabIndex = 2;
             this.button_DeleteProfile.Text = "Delete Profile";
             this.button_DeleteProfile.UseVisualStyleBackColor = false;
@@ -143,13 +147,13 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
+            this.button4.BackColor = System.Drawing.Color.Crimson;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(142, 22);
+            this.button4.Location = new System.Drawing.Point(132, 22);
             this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(54, 27);
+            this.button4.Size = new System.Drawing.Size(64, 27);
             this.button4.TabIndex = 8;
             this.button4.Text = "Delete";
             this.button4.UseVisualStyleBackColor = false;
@@ -185,13 +189,13 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
+            this.button5.BackColor = System.Drawing.Color.Gold;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(73, 22);
+            this.button5.Location = new System.Drawing.Point(69, 22);
             this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(54, 27);
+            this.button5.Size = new System.Drawing.Size(64, 27);
             this.button5.TabIndex = 7;
             this.button5.Text = "Edit";
             this.button5.UseVisualStyleBackColor = false;
@@ -212,7 +216,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Silver;
+            this.button6.BackColor = System.Drawing.Color.Gold;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(6, 22);
@@ -248,7 +252,9 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.Black;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
             this.richTextBox1.Location = new System.Drawing.Point(5, 42);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.richTextBox1.Name = "richTextBox1";
@@ -259,8 +265,9 @@
             // 
             // advancedSettingsToolStripMenuItem
             // 
-            this.advancedSettingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.advancedSettingsToolStripMenuItem.BackColor = System.Drawing.Color.Purple;
             this.advancedSettingsToolStripMenuItem.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.advancedSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.advancedSettingsToolStripMenuItem.Name = "advancedSettingsToolStripMenuItem";
             this.advancedSettingsToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.advancedSettingsToolStripMenuItem.Text = "Advanced Settings";
@@ -268,11 +275,11 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackColor = System.Drawing.Color.Black;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.advancedSettingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(13, 6);
+            this.menuStrip1.Location = new System.Drawing.Point(-3, 1);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(238, 24);
