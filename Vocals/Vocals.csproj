@@ -104,17 +104,17 @@
     </Compile>
     <Compile Include="InternalClasses\Actions.cs" />
     <Compile Include="InternalClasses\Command.cs" />
-    <Compile Include="CommandHub.cs">
+    <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommandHub.Designer.cs">
-      <DependentUpon>CommandHub.cs</DependentUpon>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="InternalClasses\Profile.cs" />
     <Compile Include="InternalClasses\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CommandHub.resx">
-      <DependentUpon>CommandHub.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOptions.resx">
       <DependentUpon>FormOptions.cs</DependentUpon>

@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 //TODO : Add listen to worda
 
 namespace Vocals {
-    public partial class CommandHub : Form {
+    public partial class Dashboard : Form {
 
         protected delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
@@ -49,7 +49,7 @@ namespace Vocals {
 
         bool listening = false;
 
-        public CommandHub() {
+        public Dashboard() {
             currentOptions = new Options();
 
             InitializeComponent();
@@ -274,8 +274,8 @@ namespace Vocals {
             if (p != null) {
                 refreshProfile(p);
 
-                listBox1.DataSource = null;
-                listBox1.DataSource = p.commandList;
+                listBox_CommandList.DataSource = null;
+                listBox_CommandList.DataSource = p.commandList;
 
                 if (speechEngine.Grammars.Count != 0) {
                     speechEngine.RecognizeAsync(RecognizeMode.Multiple);
@@ -330,8 +330,8 @@ namespace Vocals {
                             Command c;
                             c = new Command(formCommand.commandString, formCommand.actionList, formCommand.answering, formCommand.answeringString, formCommand.answeringSound, formCommand.answeringSoundPath);
                             p.addCommand(c);
-                            listBox1.DataSource = null;
-                            listBox1.DataSource = p.commandList;
+                            listBox_CommandList.DataSource = null;
+                            listBox_CommandList.DataSource = p.commandList;
                         }
                         refreshProfile(p);
                     }
@@ -373,7 +373,7 @@ namespace Vocals {
             comboBox2.DataSource = profileList;
 
             if (profileList.Count == 0) {
-                listBox1.DataSource = null;
+                listBox_CommandList.DataSource = null;
             }
             else {
                 comboBox2.SelectedItem = profileList[0];
@@ -423,14 +423,14 @@ namespace Vocals {
         private void button4_Click(object sender, EventArgs e) {
             Profile p = (Profile)(comboBox2.SelectedItem);
             if (p != null) {
-                Command c = (Command)listBox1.SelectedItem;
+                Command c = (Command)listBox_CommandList.SelectedItem;
                 if (c != null) {
                     if (speechEngine != null) {
                         speechEngine.RecognizeAsyncCancel();
                         listening = false;
                         p.commandList.Remove(c);
-                        listBox1.DataSource = null;
-                        listBox1.DataSource = p.commandList;
+                        listBox_CommandList.DataSource = null;
+                        listBox_CommandList.DataSource = p.commandList;
 
                         refreshProfile(p);
 
@@ -463,7 +463,7 @@ namespace Vocals {
                     listening = false;
 
 
-                    Command c = (Command)listBox1.SelectedItem;
+                    Command c = (Command)listBox_CommandList.SelectedItem;
                     if (c != null) {
                         FormCommand formCommand = new FormCommand(c);
                         formCommand.ShowDialog();
@@ -489,8 +489,8 @@ namespace Vocals {
                                 }
                                
 
-                                listBox1.DataSource = null;
-                                listBox1.DataSource = p.commandList;
+                                listBox_CommandList.DataSource = null;
+                                listBox_CommandList.DataSource = p.commandList;
                             }
                             refreshProfile(p);
                         }

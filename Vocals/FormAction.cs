@@ -20,15 +20,13 @@ namespace Vocals {
 
         public Keys modifier { get; set; }
         
-        public FormAction() {
-
+        public FormAction()
+        {
             InitializeComponent();
 
             keyDataSource = (Keys[])Enum.GetValues(typeof(Keys)).Cast<Keys>();
-
-            comboBox2.DataSource = keyDataSource;
-          
             comboBox1.DataSource = new string[]{"Key press","Timer"};
+            comboBox2.DataSource = keyDataSource;
 
             numericUpDown1.DecimalPlaces = 2;
             numericUpDown1.Increment = 0.1M;
