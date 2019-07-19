@@ -42,36 +42,72 @@ namespace Vocals {
         IntPtr winPointer;
 
         SpeechRecognitionEngine speechEngine;
-
         Options currentOptions;
-
         private GlobalHotkey ghk;
 
         bool listening = false;
 
         public Dashboard() {
             currentOptions = new Options();
-
             InitializeComponent();
             initialyzeSpeechEngine();
 
             myWindows = new List<string>();
             refreshProcessesList();
-
-
             fetchProfiles();
 
-
-
             ghk = new GlobalHotkey(0x0004, Keys.None, this);
-
             System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
             System.Reflection.AssemblyName assemblyName = assembly.GetName();
+
             Version version = assemblyName.Version;
             this.Text += " version : " + version.ToString();
-
             refreshSettings();
+        }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            myWindows.Clear();
         }
 
         public void handleHookedKeypress() {
@@ -82,9 +118,7 @@ namespace Vocals {
                     synth.SpeakAsync(currentOptions.answer);
                     listening = !listening;
                 }
-
-            }
-            else {
+            } else {
                 if (speechEngine.Grammars.Count > 0) {
                     speechEngine.RecognizeAsyncCancel();
                     SpeechSynthesizer synth = new SpeechSynthesizer();
@@ -117,8 +151,7 @@ namespace Vocals {
                 XmlSerializer reader = new XmlSerializer(typeof(List<Profile>));
                 profileList = (List<Profile>)reader.Deserialize(xmlStream);
                 xmlStream.Close();
-            }
-            catch {
+            } catch {
                 try {
                     Stream stream = File.Open(serializationFile, FileMode.Open);
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
@@ -126,8 +159,7 @@ namespace Vocals {
                     stream.Close();
 
 
-                }
-                catch {
+                } catch {
                     profileList = new List<Profile>();
                 }
             }
@@ -139,44 +171,33 @@ namespace Vocals {
                RegistryView.Registry32).OpenSubKey(@"SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\")) {
                 int releaseKey = (int)ndpKey.GetValue("Release");
                 {
-                    if (releaseKey == 378389)
-
-                        Console.WriteLine("The .NET Framework version 4.5 is installed");
-
-                    if (releaseKey == 378758)
-
-                        Console.WriteLine("The .NET Framework version 4.5.1  is installed");
-
+                    if (releaseKey == 378389) Console.WriteLine("The .NET Framework version 4.5 is installed");
+                    if (releaseKey == 378758) Console.WriteLine("The .NET Framework version 4.5.1  is installed");
                 }
             }
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            Get45or451FromRegistry();
-
+            //Get45or451FromRegistry();
         }
 
         void initialyzeSpeechEngine() {
             richTextBox1.AppendText("Starting Speech Recognition Engine \n");
             RecognizerInfo info = null;
-
             //Use system locale language if no language option can be retrieved
             if (currentOptions.language == null) {
                 currentOptions.language = System.Globalization.CultureInfo.CurrentUICulture.DisplayName;
             }
-
             foreach (RecognizerInfo ri in SpeechRecognitionEngine.InstalledRecognizers()) {
                 if(ri.Culture.DisplayName.Equals(currentOptions.language)) {
                     info = ri;
                     break;
                 }
             }
-
             if (info == null && SpeechRecognitionEngine.InstalledRecognizers().Count != 0) {
                 RecognizerInfo ri = SpeechRecognitionEngine.InstalledRecognizers()[0];
                 info = ri;
             }
-
             if (info != null){
                 richTextBox1.AppendText("Setting VR engine language to " + info.Culture.DisplayName + "\n");
             } else {
@@ -190,14 +211,10 @@ namespace Vocals {
 
             try {
                 speechEngine.SetInputToDefaultAudioDevice();
-            }
-            catch (InvalidOperationException) {
+            } catch (InvalidOperationException) {
                 richTextBox1.AppendText("No microphone were found\n");
             }
-
             speechEngine.MaxAlternates = 3;
-
-
         }
 
         void sr_audioLevelUpdated(object sender, AudioLevelUpdatedEventArgs e) {
@@ -207,14 +224,11 @@ namespace Vocals {
             }
         }
 
-
-
         void sr_speechRecognized(object sender, SpeechRecognizedEventArgs e) {
-
-            richTextBox1.AppendText("Commande reconnue \"" + e.Result.Text + "\" with confidence of : " + e.Result.Confidence + "\n");
-
+            richTextBox1.SelectionStart = 0;
+            richTextBox1.SelectionLength = 0;
+            richTextBox1.SelectedText = e.Result.Text + " / " + e.Result.Confidence + "\n";
             Profile p = (Profile)comboBox2.SelectedItem;
-
             if (p != null) {
                 foreach (Command c in p.commandList) {
                     string[] multiCommands = c.commandString.Split(';');
@@ -230,8 +244,6 @@ namespace Vocals {
 
         }
 
-
-
         protected bool EnumTheWindows(IntPtr hWnd, IntPtr lParam) {
             int size = GetWindowTextLength(hWnd);
             if (size++ > 0 && IsWindowVisible(hWnd)) {
@@ -240,11 +252,6 @@ namespace Vocals {
                 myWindows.Add(sb.ToString());
             }
             return true;
-        }
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-
         }
 
         void createNewProfile() {
@@ -307,8 +314,7 @@ namespace Vocals {
                 speechEngine.UnloadAllGrammars();
                 speechEngine.LoadGrammar(mygram);
 
-            }
-            else {
+            } else {
                 speechEngine.UnloadAllGrammars();
             }
 
@@ -341,8 +347,7 @@ namespace Vocals {
                         listening = true;
                     }
                 }
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
             }
         }
@@ -358,30 +363,18 @@ namespace Vocals {
             }
         }
 
-        private void label1_Click(object sender, EventArgs e) {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
-
         private void button3_Click(object sender, EventArgs e) {
             Profile p = (Profile)(comboBox2.SelectedItem);
             profileList.Remove(p);
             comboBox2.DataSource = null;
             comboBox2.DataSource = profileList;
-
             if (profileList.Count == 0) {
                 listBox_CommandList.DataSource = null;
-            }
-            else {
+            } else {
                 comboBox2.SelectedItem = profileList[0];
                 refreshProfile((Profile)comboBox2.SelectedItem);
             }
         }
-
-
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
             speechEngine.AudioLevelUpdated -= new EventHandler<AudioLevelUpdatedEventArgs>(sr_audioLevelUpdated);
@@ -401,23 +394,18 @@ namespace Vocals {
                     System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(List<Profile>));
                     writer.Serialize(xmlStream, profileList);
                     xmlStream.Close();
-                }
-                catch (Exception) {
+                } catch (Exception) {
                     DialogResult res =  MessageBox.Show("Le fichier profiles_xml.vc est en cours d'utilisation par un autre processus. Voulez vous quitter sans sauvegarder ?", "Impossible de sauvegarder", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     if (res == DialogResult.No) {
                         e.Cancel = true;
                     }
                 }
-
-            }
-            catch (Exception) {
+            } catch (Exception) {
                 DialogResult res = MessageBox.Show("Le fichier profiles.vd est en cours d'utilisation par un autre processus. Voulez vous quitter sans sauvegarder ?", "Impossible de sauvegarder", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (res == DialogResult.No) {
                     e.Cancel = true;
                 }
             }
-
-
         }
 
         private void button4_Click(object sender, EventArgs e) {
@@ -431,9 +419,7 @@ namespace Vocals {
                         p.commandList.Remove(c);
                         listBox_CommandList.DataSource = null;
                         listBox_CommandList.DataSource = p.commandList;
-
                         refreshProfile(p);
-
                         if (speechEngine.Grammars.Count != 0) {
                             speechEngine.RecognizeAsync(RecognizeMode.Multiple);
                             listening = true;
@@ -444,51 +430,30 @@ namespace Vocals {
             }
         }
 
-        private void button5_Click(object sender, EventArgs e) {
-            myWindows.Clear();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e) {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e) {
-
-        }
-
         private void button5_Click_1(object sender, EventArgs e) {
             try {
                 if (speechEngine != null) {
                     speechEngine.RecognizeAsyncCancel();
                     listening = false;
-
-
                     Command c = (Command)listBox_CommandList.SelectedItem;
                     if (c != null) {
                         FormCommand formCommand = new FormCommand(c);
                         formCommand.ShowDialog();
-
                         Profile p = (Profile)comboBox2.SelectedItem;
-
-
                         if (p != null) {
                             if (formCommand.commandString != "" && formCommand.actionList.Count != 0) {
-
                                 c.commandString = formCommand.commandString;
                                 c.actionList = formCommand.actionList;
                                 c.answering = formCommand.answering;
                                 c.answeringString = formCommand.answeringString;
                                 c.answeringSound = formCommand.answeringSound;
                                 c.answeringSoundPath = formCommand.answeringSoundPath;
-
                                 if (c.answeringSoundPath == null) {
                                     c.answeringSoundPath = "";
                                 }
                                 if (c.answeringString == null) {
                                     c.answeringString = "";
                                 }
-                               
-
                                 listBox_CommandList.DataSource = null;
                                 listBox_CommandList.DataSource = p.commandList;
                             }
@@ -500,25 +465,16 @@ namespace Vocals {
                             listening = true;
                         }
                     }
-
                 }
-            }
-            catch (Exception ex) {
+            } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
             }
 
         }
-
-        private void groupBox3_Enter(object sender, EventArgs e) {
-
-        }
-
-
-
+        
         private void advancedSettingsToolStripMenuItem_Click(object sender, EventArgs e) {
             FormOptions formOptions = new FormOptions();
             formOptions.ShowDialog();
-
             currentOptions = formOptions.opt;
             refreshSettings();
         }
@@ -531,23 +487,19 @@ namespace Vocals {
         }
 
         private void applyModificationToGlobalHotKey() {
-            if(currentOptions.key == Keys.Shift ||
+            if (currentOptions.key == Keys.Shift ||
                 currentOptions.key == Keys.ShiftKey ||
                 currentOptions.key == Keys.LShiftKey ||
                 currentOptions.key == Keys.RShiftKey) {
                     ghk.modifyKey(0x0004, Keys.None);
-            }
-            else if(currentOptions.key == Keys.Control ||
+            } else if(currentOptions.key == Keys.Control ||
                 currentOptions.key == Keys.ControlKey ||
                 currentOptions.key == Keys.LControlKey ||
                 currentOptions.key == Keys.RControlKey) {
-                ghk.modifyKey(0x0002,Keys.None);
-                    
-            }
-            else if (currentOptions.key == Keys.Alt) {
+                ghk.modifyKey(0x0002,Keys.None);      
+            } else if (currentOptions.key == Keys.Alt) {
                 ghk.modifyKey(0x0002, Keys.None);
-            }
-            else {
+            } else {
                 ghk.modifyKey(0x0000, currentOptions.key);
             }
         }
@@ -556,19 +508,15 @@ namespace Vocals {
             if (currentOptions.toggleListening) {
                 try {
                     ghk.register();
-                }
-                catch {
+                } catch {
                     Console.WriteLine("Couldn't register key properly");
                 }
-            }
-            else {
+            } else {
                 try {
                     ghk.unregister();
-                }
-                catch {
+                } catch {
                     Console.WriteLine("Couldn't unregister key properly");
                 }
-
             }
         }
 
@@ -576,24 +524,11 @@ namespace Vocals {
             if (speechEngine != null) {
                 speechEngine.UpdateRecognizerSetting("CFGConfidenceRejectionThreshold", currentOptions.threshold );
             }
-            
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
-
         }
 
         private void button6_Click(object sender, EventArgs e) {
             myWindows.Clear();
             refreshProcessesList();
         }
-
-
-
-
     }
 }
