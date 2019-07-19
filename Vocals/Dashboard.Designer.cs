@@ -35,23 +35,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button_CreateProfile = new System.Windows.Forms.Button();
-            this.listBox_CommandList = new System.Windows.Forms.ListBox();
             this.button_DeleteProfile = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.advancedSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.listBox_CommandList = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +60,7 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 24);
+            this.comboBox1.Location = new System.Drawing.Point(70, 81);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(129, 23);
@@ -80,7 +72,7 @@
             this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(5, 22);
+            this.button1.Location = new System.Drawing.Point(211, 19);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 27);
@@ -96,7 +88,7 @@
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.ForeColor = System.Drawing.Color.White;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 55);
+            this.comboBox2.Location = new System.Drawing.Point(10, 52);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(189, 23);
@@ -108,7 +100,7 @@
             this.button_CreateProfile.BackColor = System.Drawing.Color.Teal;
             this.button_CreateProfile.FlatAppearance.BorderSize = 0;
             this.button_CreateProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_CreateProfile.Location = new System.Drawing.Point(6, 22);
+            this.button_CreateProfile.Location = new System.Drawing.Point(10, 19);
             this.button_CreateProfile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_CreateProfile.Name = "button_CreateProfile";
             this.button_CreateProfile.Size = new System.Drawing.Size(96, 27);
@@ -117,26 +109,12 @@
             this.button_CreateProfile.UseVisualStyleBackColor = false;
             this.button_CreateProfile.Click += new System.EventHandler(this.button2_Click);
             // 
-            // listBox_CommandList
-            // 
-            this.listBox_CommandList.BackColor = System.Drawing.Color.Black;
-            this.listBox_CommandList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox_CommandList.ForeColor = System.Drawing.Color.White;
-            this.listBox_CommandList.FormattingEnabled = true;
-            this.listBox_CommandList.ItemHeight = 15;
-            this.listBox_CommandList.Location = new System.Drawing.Point(5, 61);
-            this.listBox_CommandList.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.listBox_CommandList.Name = "listBox_CommandList";
-            this.listBox_CommandList.Size = new System.Drawing.Size(191, 405);
-            this.listBox_CommandList.TabIndex = 9;
-            this.listBox_CommandList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // button_DeleteProfile
             // 
             this.button_DeleteProfile.BackColor = System.Drawing.Color.Crimson;
             this.button_DeleteProfile.FlatAppearance.BorderSize = 0;
             this.button_DeleteProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_DeleteProfile.Location = new System.Drawing.Point(101, 22);
+            this.button_DeleteProfile.Location = new System.Drawing.Point(105, 19);
             this.button_DeleteProfile.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_DeleteProfile.Name = "button_DeleteProfile";
             this.button_DeleteProfile.Size = new System.Drawing.Size(93, 27);
@@ -150,7 +128,7 @@
             this.button4.BackColor = System.Drawing.Color.Crimson;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(132, 22);
+            this.button4.Location = new System.Drawing.Point(338, 19);
             this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(64, 27);
@@ -159,40 +137,12 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button_CreateProfile);
-            this.groupBox1.Controls.Add(this.button_DeleteProfile);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Location = new System.Drawing.Point(3, -3);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(201, 96);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.listBox_CommandList);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(209, -3);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox2.Size = new System.Drawing.Size(201, 477);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Gold;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(69, 22);
+            this.button5.Location = new System.Drawing.Point(275, 19);
             this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(64, 27);
@@ -201,25 +151,12 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Location = new System.Drawing.Point(3, 108);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox4.Size = new System.Drawing.Size(201, 61);
-            this.groupBox4.TabIndex = 15;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
-            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Gold;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(6, 22);
+            this.button6.Location = new System.Drawing.Point(10, 79);
             this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(55, 27);
@@ -228,25 +165,12 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.progressBar1);
-            this.groupBox3.Controls.Add(this.richTextBox1);
-            this.groupBox3.Location = new System.Drawing.Point(3, 176);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox3.Size = new System.Drawing.Size(201, 298);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 22);
+            this.progressBar1.Location = new System.Drawing.Point(11, 112);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(188, 13);
+            this.progressBar1.Size = new System.Drawing.Size(188, 10);
             this.progressBar1.Step = 11;
             this.progressBar1.TabIndex = 1;
             // 
@@ -255,11 +179,11 @@
             this.richTextBox1.BackColor = System.Drawing.Color.Black;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(5, 42);
+            this.richTextBox1.Location = new System.Drawing.Point(10, 132);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(189, 245);
+            this.richTextBox1.Size = new System.Drawing.Size(189, 340);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -280,24 +204,45 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.advancedSettingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(-3, 2);
+            this.menuStrip1.Location = new System.Drawing.Point(0, -22);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(118, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // listBox_CommandList
+            // 
+            this.listBox_CommandList.BackColor = System.Drawing.Color.Black;
+            this.listBox_CommandList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox_CommandList.ForeColor = System.Drawing.Color.White;
+            this.listBox_CommandList.FormattingEnabled = true;
+            this.listBox_CommandList.ItemHeight = 15;
+            this.listBox_CommandList.Location = new System.Drawing.Point(208, 52);
+            this.listBox_CommandList.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listBox_CommandList.Name = "listBox_CommandList";
+            this.listBox_CommandList.Size = new System.Drawing.Size(191, 420);
+            this.listBox_CommandList.TabIndex = 9;
+            this.listBox_CommandList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(413, 477);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(408, 477);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button_CreateProfile);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button_DeleteProfile);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.listBox_CommandList);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Impact", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -308,10 +253,6 @@
             this.Text = "Vocals";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -326,19 +267,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button_CreateProfile;
-        private System.Windows.Forms.ListBox listBox_CommandList;
         private System.Windows.Forms.Button button_DeleteProfile;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ToolStripMenuItem advancedSettingsToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ListBox listBox_CommandList;
     }
 }
 
